@@ -1,6 +1,29 @@
 import pygame,sys,random
 from pygame.math import Vector2
 score=0;
+# WHITE = (255, 255, 255)
+# BLACK = (0, 0, 0)
+# GRAY = (150, 150, 150)
+# class Button:
+#     def __init__(self, x, y, width, height, color, text):
+#         self.rect = pygame.Rect(x, y, width, height)
+#         self.color = color
+#         self.text = text
+
+#     def draw(self):
+#         pygame.draw.rect(screen, self.color, self.rect)
+#         font = pygame.font.Font(None, 36)
+#         text_surface = font.render(self.text, True, BLACK)
+#         text_rect = text_surface.get_rect(center=self.rect.center)
+#         screen.blit(text_surface, text_rect)
+
+#     def is_clicked(self, pos):
+#         return self.rect.collidepoint(pos)
+# buttons = [
+#     Button(100, 100, 150, 50, GRAY, "Button 1"),
+#     Button(100, 200, 150, 50, GRAY, "Button 2")
+# ]
+
 class SNAKE:
 	def __init__(self):
 		self.body = [Vector2(5,10),Vector2(4,10),Vector2(3,10)]
@@ -204,6 +227,12 @@ while True:
 		if event.type == pygame.QUIT:
 			pygame.quit()
 			sys.exit()
+        # elif event.type == pygame.MOUSEBUTTONDOWN:
+        #     if event.button == 1:  # Check for left mouse button click
+        #         pos = pygame.mouse.get_pos()
+        #         for button in buttons:
+        #             if button.is_clicked(pos):
+        #                 print(f"Button '{button.text}' clicked!")
 		if event.type == SCREEN_UPDATE:
 			main_game.update()
 		if event.type == pygame.KEYDOWN:
